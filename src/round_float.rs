@@ -5,8 +5,12 @@ use num_traits::Float;
 /// # Errors
 /// Throws error if:
 /// * can't instantiate `10.0`
-/// * can't convert `digits` to a Float number.
+/// * can't convert `digits` to a Float number
+/// * `digits` is zero
 pub fn round_to_fraction<F: Float>(float_number: F, digits: u32) -> Result<F> {
+    if digits == 0 {
+        return Err(anyhow::Error::msg("`digits` must be a positive integer"));
+    }
     let ten = F::from(10.0).ok_or(anyhow::Error::msg("Failed to instantiate value `10.0`."))?;
     let digits =
         F::from(digits).ok_or(anyhow::Error::msg("Failed to convert `digits``to float"))?;
