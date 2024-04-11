@@ -3,8 +3,6 @@
 use num_traits::Float;
 pub trait RoundToFraction {
     /// Round `float_number` to specified number of digits in the fraction.
-    /// # Errors
-    /// Throws error if `digits` is zero
     fn round_to_fraction(&self, digits: u32) -> Self
     where
         Self: Float,
