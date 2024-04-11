@@ -27,7 +27,7 @@ pub trait RoundToFraction {
     /// * can't instantiate `10.0`
     /// * can't convert `digits` to a Float number
     /// * `digits` is zero
-    fn round_to_fraction<F: Float>(float_number: F, digits: u32) -> Result<F> {
+    fn round_to_fraction<F: Float>(&self, float_number: F, digits: u32) -> Result<F> {
         if digits == 0 {
             return Err(anyhow::Error::msg("`digits` must be a positive integer"));
         }
@@ -45,7 +45,7 @@ impl<T> RoundToFraction for T
 where
     T: Float,
 {
-    fn round_to_fraction<F: Float>(float_number: F, digits: u32) -> Result<F> {
+    fn round_to_fraction<F: Float>(&self, float_number: F, digits: u32) -> Result<F> {
         if digits == 0 {
             return Err(anyhow::Error::msg("`digits` must be a positive integer"));
         }
