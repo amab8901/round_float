@@ -1,6 +1,6 @@
 [package]
 name = "round_float"
-version = "0.0.5"
+version = "0.0.6"
 description = "Round `f64` and `f32` to specified number of decimals."
 keywords = ["round", "float", "round_float", "f32", "f64"]
 categories = ["no-std", "algorithms", "science"]
