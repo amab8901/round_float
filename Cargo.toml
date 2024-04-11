@@ -1,0 +1,30 @@
+[package]
+name = "round_float"
+version = "0.0.1"
+description = "Round `f64` and `f32` to specified number of decimals."
+keywords = ["round", "float", "round_float", "f32", "f64"]
+categories = ["precision", "round", "floats", "rounding", "decimals"]
+repository = "https://github.com/amab8901/round_float"
+documentation = "https://docs.rs/round_float"
+authors = ["Amir Abdin <amab8901@protonmail.com>"]
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+edition = "2021"
+rust-version = "1.75.0"
+
+[dependencies]
+anyhow = "1.0.82"
+num-traits = "0.2.18"
+
+[workspace.lints.clippy]
+let_and_return = "allow"
+module_name_repetitions = "allow"
+similar_names = "allow"
+must_use_candidate = "allow"
+missing_inline_inpublic_items = "allow"
+std_instead_of_core = "allow"
+non_exhaustive_structs = "allow"
+mod_module_files = "allow"
+self_named_module_files = "allow"
+
+pedantic = "warn"
