@@ -1,6 +1,6 @@
 [package]
 name = "round_float"
-version = "1.0.1"
+version = "1.1.1"
 description = "Round `f64` and `f32` to specified number of decimals."
 keywords = ["round", "float", "round_float", "f32", "f64"]
 categories = ["no-std", "algorithms", "science"]
@@ -13,8 +13,8 @@ edition = "2021"
 rust-version = "1.75.0"
 
 [dependencies]
-anyhow = "1.0.82"
-num-traits = "0.2.18"
+anyhow = "1.0.86"
+num-traits = "0.2.19"
 
 [workspace.lints.clippy]
 let_and_return = "allow"
@@ -27,4 +27,7 @@ non_exhaustive_structs = "allow"
 mod_module_files = "allow"
 self_named_module_files = "allow"
 
-pedantic = "warn"
+pedantic = {level = "warn", priority = -1}
+
+[features]
+no_std = []
